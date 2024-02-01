@@ -25,3 +25,4 @@ def total_salary(path):
         print('Файл відсутній або пошкоджений')
 
 result = total_salary('task1_salary.txt')
+print(result)
