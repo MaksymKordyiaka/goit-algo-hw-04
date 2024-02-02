@@ -6,7 +6,7 @@
 '''
 
 from pathlib import Path
-from colorama import Fore, Style
+from colorama import Fore
 import sys
 
 def list_files_and_directories(directory_path):
