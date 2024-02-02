@@ -23,6 +23,8 @@ def total_salary(path):
                 return (0, 0)
     except FileNotFoundError:
         print('Файл відсутній або пошкоджений')
+    except Exception as e:
+        print(e)
 
 total, average = total_salary('task1_salary.txt')
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")

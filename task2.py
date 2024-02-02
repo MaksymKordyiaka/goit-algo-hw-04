@@ -22,6 +22,8 @@ def get_cats_info(path):
             return cats_info
     except FileNotFoundError:
         print('Файл відсутній або пошкоджений')
+    except Exception as e:
+        print(e)
 
 cats_info = get_cats_info('task2_cats_info.txt')
 print(cats_info)
