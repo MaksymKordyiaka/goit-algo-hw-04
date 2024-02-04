@@ -9,15 +9,15 @@ from pathlib import Path
 from colorama import Fore
 import sys
 
-def list_files_and_directories(directory_path):
+def list_files_and_directories(directory_path, indent=0):
     try:
         path = Path(directory_path)
         for entry in path.iterdir():
             if entry.is_dir():
-                print(Fore.BLUE + f"Директорія: {entry.name}")
-                list_files_and_directories(entry)
+                print(Fore.BLUE + "  " * indent + f"Директорія: {entry.name}")
+                list_files_and_directories(entry, indent + 1)
             elif entry.is_file():
-                print(Fore.GREEN + f"Файл: {entry.name}")
+                print(Fore.GREEN + "  " * indent + f"Файл: {entry.name}")
     except FileNotFoundError:
         print(f"Директорія не знайдена: {directory_path}")
     except PermissionError:
